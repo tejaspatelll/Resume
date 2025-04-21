@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejas Patel - Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0e573a;
+      --accent-color: #4ca37e;
+      --text-color: #333;
+      --bg-color: #fff;
+      --border-color: #e0e0e0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 10pt;
+      line-height: 1.4;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      padding: 20px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      max-width: 210mm;
+      margin: 0 auto;
+      gap: 20px;
+    }
+    .main-column {
+      padding: 20px 20px 20px 0;
+    }
+    .side-column {
+      padding: 20px;
+      background-color: #fafafa;
+    }
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+    .resume-header {
+      max-width: 210mm;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 32px 0 18px 0;
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 28px;
+      gap: 24px;
+    }
+    .header-left h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+    }
+    .header-left .subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      color: var(--accent-color);
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+    .header-left {
+      flex: 1 1 300px;
+      min-width: 200px;
+    }
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 6px;
+      flex: 2 1 400px;
+      min-width: 200px;
+    }
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-end;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .contact-row:first-child {
+      flex-wrap: nowrap;
+      gap: 10px;
+    }
+    .contact-row:first-child .contact-item span {
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      max-width: 150px;
+    }
+    .contact-container { /* legacy, no longer used in header */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+      margin-bottom: 0;
+      justify-content: flex-end;
+    }
+    .contact-item {
+      font-size: 10pt;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 4px;
+      margin-bottom: 0;
+    }
+    .contact-item i {
+      margin-right: 8px;
+      color: var(--accent-color);
+    }
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 20px 0 10px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 5px;
+    }
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 2px;
+    }
+    .company-name {
+      font-size: 11px;
+      color: var(--accent-color);
+      margin-bottom: 4px;
+    }
+    .job-meta {
+      font-size: 9pt;
+      margin-bottom: 4px;
+      color: var(--text-color);
+    }
+    ul {
+      padding-left: 20px;
+      list-style-type: disc;
+      margin-bottom: 10px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    .summary-text {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    .skill-tag {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      color: #222;
+      margin: 3px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    .strength-item {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    .strength-icon {
+      width: 25px;
+      height: 25px;
+      background-color: rgba(76, 163, 125, 0);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+    .strength-icon i {
+      color: var(--accent-color);
+      font-size: 10px;
+    }
+    .strength-content h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 3px;
+    }
+    .strength-content p {
+      font-size: 9pt;
+      margin: 0;
+    }
+    /* Print-optimized styles for A4 export */
+    @media print {
+      @page {
+        size: A4;
+        margin: 6mm;
+      }
+      html, body {
+        background: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: 0;
+        width: auto;
+      }
+      .experience-item {
+    page-break-inside: avoid;
+      }
+      
+      ul, ol {
+        page-break-inside: avoid;
+      }
+      .resume-header,
+      .container {
+        max-width: 186mm !important;
+        margin: 0 auto !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .resume-header {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        margin-top: 0 !important;
+        margin-bottom: 12px !important;
+        page-break-before: avoid !important;
+        page-break-after: avoid !important;
+      }
+      .side-column {
+        background: #fafafa !important;
+        box-shadow: none !important;
+      }
+      /* Remove any unwanted page breaks */
+      .main-column, .side-column {
+        page-break-inside: avoid;
+      }
+      /* Hide scrollbars if any */
+      ::-webkit-scrollbar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="resume-header">
+    <div class="header-left">
+      <h1>Tejas Patel</h1>
+      <div class="subtitle">Industrial Designer</div>
+    </div>
+    <div class="header-right contact-block">
+      <div class="contact-row">
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Sydney, NSW</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+61 432 018 365</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>tjs13.9@gmail.com</span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/tejaspatell" target="_blank">linkedin.com/in/tejaspatell</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-globe"></i>
+          <a href="https://www.tejaspatel.design" target="_blank">tejaspatel.design</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <!-- Main Column -->
+    <div class="main-column">
+      <h2>Professional Summary</h2>
+      <p class="summary-text">
+        Innovative Industrial Designer with a Master’s degree in Design from UNSW and 3+ years of experience delivering user-centric, manufacturable products across robotics, retail, and consumer technology. Expert in advanced CAD modeling, visualization, and sustainable design, with a proven record of driving process improvements and reducing production costs. Recognized for academic excellence and a strong portfolio of impactful, award-winning projects.
+      </p>
+      
+      <h2>Professional Experience</h2>
+      <div class="experience-item">
+        <h3>Industrial Designer</h3>
+        <div class="company-name">EVOLUTION DISPLAYS PTY LIMITED</div>
+        <div class="job-meta">
+          <span>April 2023 – Dec 2024 | Sydney, NSW</span>
+        </div>
+        <ul>
+          <li>Led design and development of retail displays and commercial products from concept to mass production, optimizing for manufacturability and sustainability.</li>
+          <li>Created 50+ high-impact renders using advanced CAD tools, boosting client approval rates by 30%.</li>
+          <li>Implemented innovative cutting and thermoforming techniques reducing production time and material waste by 20% through Lean DFM practices.</li>
+          <li>Managed comprehensive design documentation including BOMs, specifications, and technical drawings.</li>
+          <li>Coordinated with offshore manufacturers and suppliers to refine tooling and assembly processes, ensuring timely delivery.</li>
+        </ul>
+      </div>
+      
+      
+      <div class="experience-item">
+        <h3>Industrial Designer</h3>
+        <div class="company-name">SysIDEA Robotics Lab, IIT Gandhinagar</div>
+        <div class="job-meta">
+          <span>January 2022 – May 2022 | Gandhinagar, India</span>
+        </div>
+        <ul>
+          <li>Designed a continuously rotating series elastic actuator for ISRO, showcasing expertise in complex mechanical design.</li>
+          <li>Developed a 2DOF robotic manipulator using SolidWorks, integrating engineering concepts into designs.</li>
+          <li>Conducted extensive prototyping using additive manufacturing and CNC machining.</li>
+          <li>Created ISO-standard technical drawings and design documents.</li>
+        </ul>
+      </div>
+      
+      <div class="experience-item">
+        <h3>Industrial Designer</h3>
+        <div class="company-name">SunRobotics Technologies</div>
+        <div class="job-meta">
+          <span>June 2020 – August 2021 | Ahmedabad, India</span>
+        </div>
+        <ul>
+          <li>Developed a human-centric robot chassis for STEM education, integrating design research and technical innovation.</li>
+          <li>Utilized SOLIDWORKS and Rhino 3D to produce detailed renderings and technical documentation.</li>
+          <li>Demonstrated integrated electronics with Raspberry Pi 4, LiDAR, and ROS for autonomous mapping.</li>
+          <li>Co-designed and manufactured a First Person View (FPV) quadcopter using generative design techniques, achieving a 4kg payload capacity.</li>
+          <li>Produced detailed CAD renderings and prototype parts using 3D printing and laser cutting.</li>
+        </ul>
+      </div>
+      
+      <div class="experience-item">
+        <h3>Freelance Designer (3D Model & Rendering)</h3>
+        <div class="company-name">Fiverr</div>
+        <div class="job-meta">
+          <span>Jan 2023 – Oct 2023 | Sydney, NSW</span>
+        </div>
+        <ul>
+          <li>Delivered photorealistic renderings and videos for clients, supporting product launches and marketing campaigns.</li>
+          <li>Specialized in product visualization that significantly increased sales and product differentiation.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Design Intern</h3>
+        <div class="company-name">Inovora India Design Studio</div>
+        <div class="job-meta">
+          <span>October 2020 | Ahmedabad, India</span>
+        </div>
+        <ul>
+          <li>Won the “Second Life of Packaging” competition by developing a sustainable repurposing solution for packaging materials.</li>
+          <li>Utilized Rhino 3D, AutoCAD, and Adobe Creative Suite to produce innovative design solutions.</li>
+        </ul>
+      </div>
+      
+
+      
+      <div class="experience-item">
+        <h3>Summer Apprenticeship</h3>
+        <div class="company-name">Ashima Ltd.</div>
+        <div class="job-meta">
+          <span>June 2019 | Ahmedabad, India</span>
+        </div>
+        <ul>
+          <li>Supported manufacturing and design teams in process optimization and technical documentation.</li>
+        </ul>
+      </div>
+      
+      
+      
+      <h2>Additional Information</h2>
+      <ul>
+        <li>Full work rights in Australia</li>
+        <li>Multilingual: English (Full Professional), Hindi (Native), Gujarati (Native)</li>
+        <li>Active member: Arc, UNSW Design Society</li>
+        <li>Portfolio: <a href="https://www.tejaspatel.design" target="_blank">tejaspatel.design</a></li>
+      </ul>
+    </div>
+    
+    <!-- Side Column -->
+    <div class="side-column">
+      <h2>Key Skills</h2>
+      <div class="skills-container">
+        <span class="skill-tag">SolidWorks</span>
+        <span class="skill-tag">Rhino 3D</span>
+        <span class="skill-tag">Fusion 360</span>
+        <span class="skill-tag">AutoCAD</span>
+        <span class="skill-tag">Keyshot</span>
+        <span class="skill-tag">Adobe CC</span>
+        <span class="skill-tag">3D Rendering</span>
+        <span class="skill-tag">DFM</span>
+        <span class="skill-tag">3D Printing</span>
+        <span class="skill-tag">CNC Machining</span>
+        <span class="skill-tag">Laser Cutting</span>
+        <span class="skill-tag">Injection Molding</span>
+        <span class="skill-tag">Parametric CAD</span>
+        <span class="skill-tag">Class-A Surfacing</span>
+        <span class="skill-tag">Lean Process Improvement</span>
+        <span class="skill-tag">Sustainable Design</span>
+      </div>
+      
+      <h2>Core Competencies</h2>
+      <div class="strength-item">
+        <div class="strength-icon"><i class="fas fa-lightbulb"></i></div>
+        <div class="strength-content">
+          <h4>Smart Product Development</h4>
+          <p>Designs and develops innovative, technology-driven products that integrate electronics, automation, and user-friendly interfaces to solve real-world problems.</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon"><i class="fas fa-user-check"></i></div>
+        <div class="strength-content">
+          <h4>User-Centered Design</h4>
+          <p>Applies research-driven, human-centered methodologies to create solutions tailored to user needs, ensuring usability and impactful experiences.</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon"><i class="fas fa-recycle"></i></div>
+        <div class="strength-content">
+          <h4>Sustainability</h4>
+          <p>Champions circular economy principles, material innovation, and DFM for environmentally responsible product outcomes.</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-icon"><i class="fas fa-users"></i></div>
+        <div class="strength-content">
+          <h4>Cross-functional Collaboration</h4>
+          <p>Leads and collaborates with multidisciplinary teams to align design, engineering, and manufacturing objectives for successful project delivery.</p>
+        </div>
+      </div>
+
+      
+      <h2>Education</h2>
+      <div class="education-item">
+        <h3>Master's Degree, Design</h3>
+        <div class="company-name">UNSW</div>
+        <div class="job-meta">
+          <span>February 2023 – August 2024</span>
+        </div>
+        <ul>
+          <li>Dean’s List recognition for academic excellence</li>
+          <li>Winner: Circular Economy Design Sprint 2023</li>
+          <li>Featured: UNSW SDG Showcase</li>
+          <li>Specialized coursework in human-centered &amp; interaction design</li>
+        </ul>
+      </div>
+      <div class="education-item">
+        <h3>Bachelor of Design, Industrial &amp; Product Design</h3>
+        <div class="company-name">Nirma University</div>
+        <div class="job-meta">
+          <span>2018 – 2022</span>
+        </div>
+        <ul>
+          <li>Winner: Innovora “Second Life of Packaging” Challenge</li>
+          <li>Project featured in newspaper</li>
+        </ul>
+      </div>
+      
+      <h2>Certifications</h2>
+      <ul>
+        <li>Design for a Circular Economy</li>
+        <li>ADA Innovation Hub Circular Economy Design Sprint 2023</li>
+        <li>Data Visualisation: Empowering Business with Effective Insights</li>
+        <li>Accenture North America – Product Design</li>
+      </ul>
+
+      <h2>Projects &amp; Awards</h2>
+      <ul>
+        <li><strong>ISRO Series Elastic Actuator:</strong> Led mechanical design and prototyping for space robotics.</li>
+        <li><strong>Retail Display Optimization:</strong> Reduced material waste by 20% through Lean DFM practices.</li>
+        <li><strong>Second Life of Packaging:</strong> Competition-winning sustainable design project.</li>
+        <li><strong>FPV Quadcopter:</strong> Designed and prototyped a 4kg payload drone.</li>
+        <li><strong>UNSW SDG Showcase:</strong> Featured design project demonstrating high-impact solutions.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
